@@ -1,0 +1,34 @@
+.saas-layout {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100vh;
+    transition: margin var(--transition-ease);
+}
+
+.main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--space-3);
+    background-color: var(--color-background);
+}
+
+/* Sidebar Responsive Logic */
+@media (max-width: 1024px) {
+    .saas-layout .sidebar {
+        position: fixed;
+        z-index: 50;
+        transform: translateX(0);
+    }
+
+    .saas-layout.collapsed .sidebar {
+        transform: translateX(-100%);
+    }
+}
